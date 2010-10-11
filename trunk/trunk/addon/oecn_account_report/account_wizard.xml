@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <!-- 明细账打印 -->
+        <wizard id="wizard_ledger_report" keyword="client_print_multi" model="account.account" name="account.ledger.report" string="打印明细账"/>
+        <wizard id="wizard_ledger" menu="False" model="account.account" name="account.ledger.report" string="打印明细账"/>
+        <menuitem icon="STOCK_PRINT" action="wizard_ledger" id="menu_ledger" parent="oecn_account.menu_account_cn" type="wizard" sequence="10"/>
+
+        <!--打印资产负债表 by Joshua-->
+        <wizard id="wizard_account_generic_report" keyword="client_print_multi" model="account.period" name="account.generice_report" string="打印报表"/>
+        <wizard id="wizard_account_generic" menu="False" model="account.period" name="account.generice_report" string="打印报表"/>
+        <menuitem icon="STOCK_PRINT" action="wizard_account_generic" id="menu_account_generic" parent="oecn_account.menu_account_cn" type="wizard" sequence="30"/>
+        <!--打印资产负债表 by Joshua-->
+
+        <!--打印总账 by Joshua-->
+        <wizard id="wizard_general_ledger_report" keyword="client_print_multi" model="account.account" name="account.general_ledger_report" string="打印总账"/>
+        <wizard id="wizard_general_ledger" menu="False" model="account.account" name="account.general_ledger_report" string="打印总账"/>
+        <menuitem icon="STOCK_PRINT" action="wizard_general_ledger" id="menu_general_ledger" parent="oecn_account.menu_account_cn" type="wizard" sequence="20"/>
+        <!--打印总账 by Joshua-->
+    </data>
+</openerp>

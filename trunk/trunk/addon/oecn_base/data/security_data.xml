@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<openerp>
+	<data noupdate="0">
+
+<!--
+ Users
+-->
+    <record model="res.users" id="base.user_root">
+        <field name="signature">系统管理员</field>
+        <field name="name">系统管理员</field>
+        <field name="address_id" ref="base.main_address"/>
+        <field name="company_id" ref="base.main_company"/>
+        <field name="action_id" ref="base.action_menu_admin"/>
+        <field name="menu_id" ref="base.action_menu_admin"/>
+    </record>
+
+</data>
+</openerp>
+
