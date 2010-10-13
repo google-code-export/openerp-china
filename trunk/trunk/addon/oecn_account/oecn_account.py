@@ -77,9 +77,9 @@ class account_move(osv.osv):
     添加制单、审核、附件数三个字段
     """
     _columns = {
-        'write_uid':fields.many2one('res.users', '审核', readonly=True),
-        'create_uid':fields.many2one('res.users', '制单', readonly=True, select=True),      
-        'attachment_count':fields.integer('附件数', required=True, help='该记账凭证对应的原始凭证数量'),
+        'write_uid':fields.many2one('res.users', 'validator', readonly=True),
+        'create_uid':fields.many2one('res.users', 'creator', readonly=True, select=True),      
+        'attachment_count':fields.integer('Attachment Count', required=True, help='count of reference documents'),
     }
     """
     附件数默认为1张
@@ -97,10 +97,10 @@ class config_allow_negative(osv.osv_memory):
     _columns = {
         'name': fields.char('Name', size=64),
         'allow': fields.selection([
-            ('yes', '用'),
-            ('no', '不用')
-        ], '贵公司是否使用负数金额的凭证', required=True,
-           help="OpenERP默认不支持负数凭证，这里可以设置为支持，以满足中国用户需要")
+            ('yes', 'yes'),
+            ('no', 'no')
+        ], 'Can you ammount move account be negative', required=True,
+           help="OpenERP does not support negative account move, there can be set to support to meet the needs of Chinese users")
     }
     _defaults = {
         'allow': lambda *a: 'yes'

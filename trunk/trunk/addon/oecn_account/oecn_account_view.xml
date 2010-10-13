@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-       <menuitem name="中国会计菜单" id="menu_account_cn" parent="account.menu_finance" sequence="99"/>
-       <menuitem action="account.action_move_line_form_encode_by_move" name="会计凭证" id="menu_move_cn" parent="menu_account_cn" sequence="2"/>
+       <menuitem name="China Accounting Menu" id="menu_account_cn" parent="account.menu_finance" sequence="99"/>
+       <menuitem action="account.action_move_line_form_encode_by_move" name="account move" id="menu_move_cn" parent="menu_account_cn" sequence="2"/>
         <!-- 为 account.move 添加“附件数”字段 -->
         <record id="view_move_form_cn_1" model="ir.ui.view">
             <field name="name">account.move.form_cn_1</field>
@@ -11,7 +11,7 @@
             <field name="inherit_id" ref="account.view_move_form"/>
             <field name="arch" type="xml">
                 <xpath expr="/form/group" position="replace">                
-                    <field name="name" string="凭证编号" select="1" readonly="True"/>
+                    <field name="name" string="account name" select="1" readonly="True"/>
                     <field name="write_uid" attrs="{'invisible':[('state','=','draft')]}"/>
                     <field name="date" select="1"/>
                     <field name="period_id" select="2"/>
@@ -31,8 +31,8 @@
                         <!-- 单记录视图 -->
                         <form string="Account Entry Line">
                             <notebook colspan="4">
-                                <page string="总分类账信息">
-                                    <field name="name" string="摘要" select="1"/>
+                                <page string="GL">
+                                    <field name="name" string="summary" select="1"/>
                                     <newline/>
                                     <field name="date" select="1"/>
                                     <field name="account_id" domain="[('journal_id','=',parent.journal_id)]"/>
@@ -42,7 +42,7 @@
                                     <field name="ref" select="1"/>
                                     <field name="state"/>
                                 </page>
-                                <page string="采购销售分类账信息">
+                                <page string="AP/AR">
                                     <field name="partner_id" on_change="onchange_partner_id(False,partner_id,account_id,debit,credit,parent.date,parent.journal_id)"/>
                                     <field name="invoice" select="1"/>
                                     <field name="date_maturity"/>
@@ -50,24 +50,24 @@
                                     <field name="reconcile_id"/>
                                     <field name="reconcile_partial_id"/>
                                 </page>
-                                <page  string="存货分类账信息">
+                                <page  string="Stock">
                                     <field name="product_id" select = '1'/>
                                     <field name="quantity" select="1"/>
                                     <field name= "product_uom_id" select="1"/>
                                 </page>
-                                <page string="银行日记账信息">
+                                <page string="Cash">
                                     <field name="amount_currency"/>
                                     <field name="currency_id"/>
                                     <field name="statement_id"/>
                                 </page>
-                                <page string="辅助核算信息">
+                                <page string="Cost">
                                     <field colspan="6" name="analytic_lines" nolabel="1" context="{'default_general_account_id':account_id, 'default_name': name, 'default_date':date, 'amount': (debit or 0.0)-(credit or 0.0)}"/>
                                 </page>
                             </notebook>
                         </form>
                         <!-- 快速输入界面 -->
                         <tree editable="top" string="Account Entry Line">
-                            <field name="name" string="摘要"/>
+                            <field name="name" string="summary"/>
                             <field name="account_id" domain="[('journal_id','=',parent.journal_id)]"/>
                             <field name="debit" sum="Total Debit"/>
                             <field name="credit" sum="Total Credit"/>
@@ -80,25 +80,25 @@
         <!-- configartion view -->
         
                 <record id="view_config_allow_negative" model="ir.ui.view">
-                    <field name="name">允许红字凭证</field>
+                    <field name="name">Allow negative moves</field>
                     <field name="model">oecn_account.config.allow_negative</field>
                     <field name="type">form</field>
                     <field name="arch" type="xml">
                         <form string="Sales Configuration">
-                            <separator colspan="4" string="贵公司是否用到红字会计凭证"/>
+                            <separator colspan="4" string="Can you account move account be negative ?"/>
                             <newline/>
                             <field name="allow"/>
                             <separator string="" colspan="4"/>
                             <group col="4" colspan="4">
                                 <button icon="gtk-cancel" name="action_cancel" type="object" special="cancel" string="Cancel"/>
-                                <button icon="gtk-ok" name="allow_negative" string="设置" type="object"/>
+                                <button icon="gtk-ok" name="allow_negative" string="yes" type="object"/>
                             </group>
                         </form>
                     </field>
                 </record>
         
                 <record id="action_config_allow_negative" model="ir.actions.act_window">
-                    <field name="name">允许红字凭证</field>
+                    <field name="name">Allow negative moves</field>
                     <field name="type">ir.actions.act_window</field>
                     <field name="res_model">oecn_account.config.allow_negative</field>
                     <field name="view_type">form</field>
@@ -108,8 +108,8 @@
         
                 <!-- register configuration wizard -->
                 <record id="config_wizard_step_allow_negative" model="ir.actions.todo">
-                    <field name="name">允许红字凭证</field>
-                    <field name="note">用户可以选择是否可以输入金额为负数的会计凭证</field>
+                    <field name="name">Allow negative moves</field>
+                    <field name="note">user can choose Whether to use negative account moves</field>
                     <field name="action_id" ref="action_config_allow_negative"/>
                 </record>
         
