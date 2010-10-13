@@ -18,23 +18,19 @@
 ##############################################################################
 
 {
-    'name': '中国会计模块',
+    'name': 'China Account',
     'version': '1.0',
     'description': """
     按中国会计制度对原会计模块进行增强：
-    会计工作台
-    凭证界面                 
-    凭证按月按编号范围编号   
-    按科目查询凭证          
+    凭证界面按中国会计习惯调整                
+    凭证按月按编号范围编号            
     """,
-    'author': 'hornerp',
+    'author': 'OpenERP中国顾问社区',
     'website': 'http://openerp-china.org/',
-    'depends': ['board',
-                'account',
-                'relatorio_report'
-     ],
+    'depends': ['account',
+    ],
     'init_xml': [],
-    'update_xml': ['account_view.xml',
+    'update_xml': ['oecn_account_view.xml',
     ],
     'demo_xml': [],
     'installable': True,
