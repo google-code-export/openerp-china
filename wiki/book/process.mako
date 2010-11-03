@@ -16,7 +16,7 @@
 
     <script type="text/javascript">
         var context_help = function() {
-            return window.open(getURL('http://wiki.shine-it.net/index.php', {title: 'process.process', lang:'${rpc.session.context.get('lang', 'en')}'}));
+            return window.open(getURL('http://openerp-china.org/wiki/index.php', {title: 'process.process', lang:'${rpc.session.context.get('lang', 'en')}'}));
         }
     </script>
 

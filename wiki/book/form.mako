@@ -107,7 +107,7 @@
                                     </td>
                                     % endif
                                     <td align="center" valign="middle" width="16">
-                                        <a target="_blank" href="${py.url('http://wiki.shine-it.net/index.php', title=form.screen.model, lang=rpc.session.context.get('lang', 'en'))}">
+                                        <a target="_blank" href="${py.url('http://openerp-china.org/wiki/index.php', title=form.screen.model, lang=rpc.session.context.get('lang', 'en'))}">
                                             <img title="Help links might not work. We will setup the new documentation once we ported all docs to the new documentation system." class="button" border="0" src="/static/images/stock/gtk-help.png" width="16" height="16"/>
                                         </a>
                                     </td>
