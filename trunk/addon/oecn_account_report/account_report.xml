@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <report auto="False" id="account_move" model="account.move" name="account.move.odt" rml="oecn_account_report/report/report_move.odt" string="打印凭证" />
+        <record id="account_move" model="ir.actions.report.xml">
+            <field name="report_type">odt</field>
+        </record>
+
+        <report auto="False" id="account_cash_ledger" menu="False" model="account.account" name="account.cash_ledger" rml="oecn_account_report/report/cash_ledger.odt" string="打印现金日记账"/>
+        <record id="account_cash_ledger" model="ir.actions.report.xml">
+            <field name="report_type">odt</field>
+        </record>
+
+        <report auto="False" id="account_foreign_currency_cash_ledger" menu="False" model="account.account" name="account.foreign_currency_cash_ledger" rml="oecn_account_report/report/foreign_currency_cash_ledger.odt" string="打印外币日记账"/>
+        <record id="account_foreign_currency_cash_ledger" model="ir.actions.report.xml">
+            <field name="report_type">odt</field>
+        </record>
+
+        <report auto="False" id="account_threecolumns_ledger" menu="False" model="account.account" name="account.threecolumns_ledger" rml="oecn_account_report/report/threecolumns_ledger.odt" string="打印三栏式明细账"/>
+        <record id="account_threecolumns_ledger" model="ir.actions.report.xml">
+            <field name="report_type">odt</field>
+        </record>
+
+        <report auto="False" id="account_product_ledger" menu="False" model="account.account" name="account.product_ledger" rml="oecn_account_report/report/product_ledger.odt" string="打印数量金额明细账"/>
+        <record id="account_product_ledger" model="ir.actions.report.xml">
+            <field name="report_type">odt</field>
+        </record>
+
+        <report auto="False" id="account_general_ledger" menu="False" model="account.account" name="account.general_ledger" rml="oecn_account_report/report/general_ledger.odt" string="打印总账"/>
+        <record id="account_general_ledger" model="ir.actions.report.xml">
+            <field name="report_type">odt</field>
+        </record>
+
+        <report auto="False" id="account_balance_sheet" menu="False" model="account.account" name="account.balance_sheet" rml="oecn_account_report/report/balance_sheet.odt" string="打印三大报表"/>
+        <record id="account_balance_sheet" model="ir.actions.report.xml">
+            <field name="report_type">odt</field>
+        </record>
+
+    </data>
+</openerp>
