@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="note_account_type" model="board.note.type">
+            <field name="name">Accountants</field>
+        </record>
+         <record id="action_draft_invoice" model="ir.actions.act_window">
+             <field name="name">Draft Invoices</field>
+             <field name="res_model">account.invoice</field>
+             <field name="view_type">form</field>
+             <field name="view_mode">tree,form,calendar,graph</field>
+             <field name="domain">[('state','=','draft')]</field>
+         </record>
+         <record id="action_draft_move" model="ir.actions.act_window">
+             <field name="name">Draft Invoices</field>
+             <field name="res_model">account.move</field>
+             <field name="view_type">form</field>
+             <field name="view_mode">tree,form</field>
+             <field name="domain">[('state','=','draft')]</field>
+         </record>
+        <record id="board_account_fi_form" model="ir.ui.view">
+            <field name="name">board.account.form.fi</field>
+            <field name="model">board.board</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Account Board">
+                    <hpaned> 
+                        <child1> 
+                            <action colspan="4" height="160" name="%(action_draft_invoice)d" string="单 - 未入账发票" width="510"/> 						
+                            <action colspan="4" height="160" name="%(action_draft_move)d" string="证 - 未记账凭证" width="510"/> 
+                        </child1>                       				
+                        <child2>
+                            <button name="%(wizard_general_ledger)d" string="总账" type="action"/>
+                            <button name="%(wizard_ledger)d" string="明细账" type="action"/>
+                            <button name="%(wizard_account_generic)d" string="会计报表" type="action"/>                                  							
+                        </child2>
+                    </hpaned>
+                </form>
+            </field>
+        </record>
+        <record id="l10n_cn_fi_board" model="ir.actions.act_window">
+            <field name="name">会计工作台</field>
+            <field name="res_model">board.board</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="usage">menu</field>
+            <field name="view_id" ref="board_account_fi_form"/>
+        </record>
+    </data>
+</openerp>
