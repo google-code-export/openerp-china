@@ -21,7 +21,7 @@ class account(osv.osv):
                     account_parent_id = record['parent_id'][0]
                     while account_parent_id:
                             parent_obj = self.read(cr, uid, account_parent_id, ['code','name', 'parent_id'], context)
-                            if parent_obj['code']:
+                            if parent_obj['code']:     #Jeff 不显示最上层view科目的名称
                                 name = parent_obj['name'] + '/'+name
                             if  parent_obj['parent_id']:
                                 account_parent_id = parent_obj['parent_id'][0]
