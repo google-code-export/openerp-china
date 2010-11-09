@@ -18,8 +18,8 @@
 #
 ##############################################################################
 {
-    "name" : "",
-    "version" : "1.1",
+    "name" : "中文会计科目表",
+    "version" : "1.0",
     "category": "Localisation/Account Charts",
     "author" : "openerp-china.org",
     "maintainer":"openerp-china.org",
