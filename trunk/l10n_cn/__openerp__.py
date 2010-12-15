@@ -26,7 +26,7 @@
     "website":"http://openerp-china.org",
     "url":"http://code.google.com/p/openerp-china/source/browse/#svn/trunk/l10n_cn",
     "description": """
-
+        添加中文省份数据
         科目类型\会计科目表模板\增值税\辅助核算类别\管理会计凭证簿\财务会计凭证簿
     """,
     "depends" : ["base","account"],
