@@ -23,39 +23,19 @@
     "category": "Localisation/Account Charts",
     "author" : "openerp-china.org",
     "maintainer":"openerp-china.org",
-    "contributors":[
-           "Digitalsatori",
-           "Oldrev",
-           "Xiao Xiang fu",
-           "Jeff",
-           "Joshua",
-           "Jack",
-           "Mrshelly",
-    ],
     "website":"http://openerp-china.org",
     "url":"http://code.google.com/p/openerp-china/source/browse/#svn/trunk/l10n_cn",
     "description": """
-此模块包含如下功能：
-    1.  为 OpenERP 的 RML/PDF 报表提供中文字体支持。作者：Oldrev
-        原始 base_report_unicode 模块作者：Gábor Dukai
-    2.  为 OpenERP 添加中国省份数据。作者：Digitalsatori
-    3.  relatorio_report模块使OpenERP可以支持Calc格式的财务报表 作者:Oldrev
-    4.  科目类型\会计科目表模板\增值税\辅助核算类别\管理会计凭证簿\财务会计凭证簿 作者:Wjfonhand
-    5.  会计凭证界面本地化\凭证按月编号\凭证金额允许负数 作者:Wjfonhand
-    6.  科目显示全称\账簿打印\报表打印 作者:Joshua
+
+        科目类型\会计科目表模板\增值税\辅助核算类别\管理会计凭证簿\财务会计凭证簿
     """,
     "depends" : ["base","account"],
     'init_xml': [
-        'data/base_data.xml',
+        'base_data.xml',
     ],
     "demo_xml" : [],
     "update_xml" : [
-        'account_cn/account_view.xml',
-        'account_cn/account_wizard.xml',
-        'account_cn/account_report.xml',
-        'account_cn/board_account_fi_view.xml',
-        'chart_cn/account_chart.xml',
-        'chart_cn/l10n_cn_wizard.xml',
+        'account_chart.xml',
     ],
     "license": "GPL-3",
     "certificate":"",

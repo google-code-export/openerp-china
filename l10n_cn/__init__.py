@@ -19,9 +19,5 @@
 #
 ##############################################################################
 
-import base_cn
-import account_cn
-import relatorio_report_cn
-
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 
