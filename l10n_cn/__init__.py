@@ -18,6 +18,6 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
 #
 ##############################################################################
-
+import pdf_report_zh
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 
