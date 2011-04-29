@@ -18,9 +18,9 @@
 #
 ##############################################################################
 {
-    "name" : "中国会计科目表",
-    "version" : "1.0",
-    "category": "Localisation/Account Charts",
+    "name" : "中文本地化模块",
+    "version" : "1.1",
+    "category": "Localisation",
     "author" : "openerp-china.org",
     "maintainer":"openerp-china.org",
     "website":"http://openerp-china.org",
@@ -28,6 +28,7 @@
     "description": """
         添加中文省份数据
         科目类型\会计科目表模板\增值税\辅助核算类别\管理会计凭证簿\财务会计凭证簿
+        中文pdf报表打印
     """,
     "depends" : ["base","account"],
     'init_xml': [
