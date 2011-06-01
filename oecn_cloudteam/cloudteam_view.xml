@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    <!--
+    云团队成员类型
+    -->
+        <record id="view_cloudteam_case_form" model="ir.ui.view">
+            <field name="name">cloudteam.case.form</field>
+            <field name="model">cloudteam.case</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="cloudteam_case_form">
+                    <field name="name" select="1"/>
+                    <field name="active" select="1"/>
+                </form>
+            </field>
+        </record>
+        <record id="view_cloudteam_case_tree" model="ir.ui.view">
+            <field name="name">cloudteam.case.tree</field>
+            <field name="model">cloudteam.case</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="cloudteam_case_tree">
+                    <field name="name"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        <record id ="action_cloudteam_case_form" model="ir.actions.act_window">
+            <field name="name">云团队事务</field>
+            <field name="res_model">cloudteam.case</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="menu_cloudteam" name="云团队" />
+        <menuitem action ="action_cloudteam_case_form" id="menu_cloudteam_case_form" name="云团队事务" parent='menu_cloudteam'/>
+    <!--
+    云团队成员
+    -->
+    <record id="view_cloudteam_menber_form" model="ir.ui.view">
+            <field name="name">cloudteam.menber.form</field>
+            <field name="model">cloudteam.menber</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="cloudteam_menber_form">
+                    <field name="user" select="1"/>
+                    <field name="case" select="1"/>
+                    <field name="quantity" select="1"/>
+                    <field name="link" select="1" />
+                    <field name="text" select="1" colspan="4"/>
+                </form>
+            </field>
+        </record>
+        <record id="view_cloudteam_menber_tree" model="ir.ui.view">
+            <field name="name">cloudteam.menber.tree</field>
+            <field name="model">cloudteam.menber</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="cloudteam_menber_tree">
+                    <field name="user"/>
+                    <field name="case"/>
+                    <field name="quantity"/>
+                    <field name="text"/>
+                    <field name="link"/>
+                </tree>
+            </field>
+        </record>
+        <record id ="action_cloudteam_menber_form" model="ir.actions.act_window">
+            <field name="name">云团队成员</field>
+            <field name="res_model">cloudteam.menber</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="menu_cloudteam" name="云团队" />
+        <menuitem action ="action_cloudteam_menber_form" id="menu_cloudteam_menber_form" name="云团队成员" parent='menu_cloudteam'/>
+    </data>
+</openerp>
