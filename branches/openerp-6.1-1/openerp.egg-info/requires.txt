@@ -1,0 +1,23 @@
+babel
+feedparser
+gdata
+lxml
+mako
+psycopg2
+pydot
+python-dateutil < 2
+python-ldap
+python-openid
+pytz
+pywebdav
+pyyaml
+reportlab
+simplejson
+vatnumber
+vobject
+werkzeug
+xlwt
+zsi
+
+[SSL]
+pyopenssl
